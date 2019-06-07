@@ -1,0 +1,93 @@
+@import './common/base.less';
+@import './common/modern-normalize';
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    box-sizing: border-box;
+    font-weight: 300;
+    font-size: 14px;
+    font-family: @font-family;
+}
+
+a {
+    color: @text-color ;
+    text-decoration: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+a:hover {
+    color: @primary-color;
+}
+
+a:focus {
+    outline: 0
+}
+
+b {
+    font-weight: normal
+}
+
+i {
+    font-style: normal
+}
+
+p {
+    margin: 0
+}
+
+h1,
+h2,
+h4 {
+    margin: 0;
+    font-weight: normal
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 17px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+img {
+    border: 0
+}
+
+code {
+    font-size: 90%;
+    font-family: Menlo, monospace;
+}
+
+p>code {
+    padding: 0.2em 0.4em;
+    background: #e1e9ed;
+}
+
+pre {
+    overflow-x: scroll;
+    padding: 10pt 15pt;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: left;
+    font-size: 13px;
+}
+
+@import './components/card';
+@import './components/button';

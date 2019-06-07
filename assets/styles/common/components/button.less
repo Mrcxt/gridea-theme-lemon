@@ -1,0 +1,80 @@
+@import '../common/base.less';
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid fade(@primary-color, 40%);
+    border-radius: 100px;
+    color: @primary-color;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+        border: 1px solid @primary-color;
+        background-color: fade(@primary-color, 5%);
+        color: lighten(@primary-color, 5%);
+    }
+
+    // display
+    &.btn-block {
+        display: block;
+    }
+
+    // color
+
+    &.btn-primary {
+        border: 1px solid fade(@primary-color, 40%);
+        color: @primary-color;
+
+        &:hover {
+            border: 1px solid @primary-color;
+            background-color: fade(@primary-color, 5%);
+        }
+    }
+
+    &.btn-success {
+        border: 1px solid fade(@success-color, 40%);
+        color: @success-color;
+
+        &:hover {
+            border: 1px solid @success-color;
+            background-color: fade(@success-color, 5%);
+        }
+    }
+
+    &.btn-warning {
+        border: 1px solid fade(@warning-color, 40%);
+        color: @warning-color;
+
+        &:hover {
+            border: 1px solid @warning-color;
+            background-color: fade(@warning-color, 5%);
+        }
+    }
+
+    &.btn-error {
+        border: 1px solid fade(@error-color, 40%);
+        color: @error-color;
+
+        &:hover {
+            border: 1px solid @error-color;
+            background-color: fade(@error-color, 5%);
+        }
+    }
+
+    // text
+    &.btn-text {
+        padding-right: 0;
+        padding-left: 0;
+        border: none;
+        font-size: 14px;
+
+        &:hover {
+            border: none;
+            background-color: #fff;
+        }
+    }
+}

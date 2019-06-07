@@ -1,0 +1,47 @@
+<div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="<%= themeConfig.domain %>">
+        <img class="avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt="">
+      </a>
+        </div>
+        <div class="site-title">
+            <h1>
+                <%= themeConfig.siteName %>
+            </h1>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <% menus.forEach(function(menu) { %>
+                    <% if (menu.openType === 'External') { %>
+                        <li>
+                            <a href="<%= menu.link %>" class="menu" target="_blank">
+                                <%= menu.name %>
+                            </a>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <a href="<%= menu.link %>" class="menu">
+                                    <%= menu.name %>
+                                </a>
+                            </li>
+                            <% } %>
+                                <% }); %>
+            </ul>
+        </div>
+        <!-- <div class="social-container">
+            <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach((item) => { %>
+                <% if (site.customConfig[item]) { %>
+                    <a href="<%= site.customConfig[item] %>" target="_blank">
+        <i class="fab fa-<%= item %>">1</i>
+      </a>
+                    <% } %>
+                        <% }) %>
+                            <span>123</span>
+                            <span>123</span>
+                            <span>123</span>
+                            <span>123</span>
+                            <span>123</span>
+        </div> -->
+    </div>
+</div>

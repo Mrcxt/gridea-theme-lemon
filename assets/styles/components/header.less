@@ -1,0 +1,54 @@
+@import '../common/common/base';
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: @box-shadow;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 960px;
+
+    .logo {
+      .avatar {
+        display: block;
+        padding: 5px;
+        height: 50px;
+      }
+    }
+
+    .site-title {
+      h1 {
+        margin-right: 25px;
+        color: @title-color;
+        font-weight: 100;
+        font-size: 24px;
+      }
+    }
+
+    .menu-container {
+      ul {
+        display: flex;
+
+        li {
+          a {
+            margin: 0 25px;
+            color: @title-color;
+            font-weight: 400;
+
+            &:hover {
+              color: fade(@title-color, 70%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.post-container {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 960px;
+
+  // left
+  .post-container-left {
+    margin-right: 20px;
+    width: 660px;
+
+    .post {
+      margin-bottom: 30px;
+
+      .post-title {
+        margin-bottom: 10px;
+
+        a {
+          &:hover {
+            color: @primary-color;
+          }
+        }
+      }
+
+      .post-info {
+        // margin-bottom: 10px;
+
+        .post-time {}
+
+        .post-tag {}
+      }
+
+      .post-article {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .post-feature-image {
+          display: block;
+          margin-left: 20px;
+          width: 250px;
+          height: 200px;
+          background-position: center center;
+          background-size: cover;
+
+          &:hover {}
+
+          img {}
+        }
+
+        .post-abstract {
+          display: flex;
+          align-items: flex-start;
+          flex: 1;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 10px 0;
+
+          .post-abstract-comtent {
+            margin-bottom: 20px;
+          }
+
+          a.btn {
+            padding: 0;
+          }
+        }
+
+      }
+    }
+  }
+
+  // right
+  .post-container-right {
+    flex: 1;
+
+    .post {
+      margin-bottom: 30px;
+    }
+
+    .id_card {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .id_card-avatar {
+        display: block;
+        padding: 15px;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        background-position: center center;
+        background-origin: content-box;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: @box-shadow;
+      }
+
+      .id_card-title {
+        margin-top: 10px;
+        font-weight: 100;
+        font-size: 24px;
+      }
+
+      .id_card-description {
+        overflow: hidden;
+        margin-top: 10px;
+        color: #979797;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+      }
+    }
+
+    .id_card-sns {
+      // display: flex;
+      // justify-content: space-evenly;
+      margin-top: 20px;
+      text-align: center;
+
+      .fa {
+        margin: 0 10px 10px;
+        font-size: 18px;
+
+      }
+    }
+  }
+}
