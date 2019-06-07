@@ -7,11 +7,10 @@
 
   // left
   .post-container-left {
-    margin-right: 20px;
-    width: 660px;
+    flex: 1;
 
     .post {
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
 
       .post-title {
         margin-bottom: 10px;
@@ -39,7 +38,8 @@
           display: block;
           margin-left: 20px;
           width: 250px;
-          height: 200px;
+          height: 150px;
+          border-radius: 10px;
           background-position: center center;
           background-size: cover;
 
@@ -48,7 +48,7 @@
           img {}
         }
 
-        .post-abstract {
+        .post-comtent {
           display: flex;
           align-items: flex-start;
           flex: 1;
@@ -56,7 +56,7 @@
           justify-content: space-between;
           padding: 10px 0;
 
-          .post-abstract-comtent {
+          .post-comtent-abstract {
             margin-bottom: 20px;
           }
 
@@ -69,14 +69,27 @@
     }
   }
 
+  // 
+  .post-container-middle {
+    width: 20px;
+  }
+
   // right
   .post-container-right {
-    flex: 1;
+    width: 280px;
 
     .post {
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
     }
 
+    // 
+    .notice {
+      .notice-title {}
+
+      .notice-content {}
+    }
+
+    // 
     .id_card {
       display: flex;
       align-items: center;
@@ -103,23 +116,23 @@
       }
 
       .id_card-description {
-        overflow: hidden;
         margin-top: 10px;
+        // overflow: hidden;
+        width: 100%;
         color: #979797;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        text-align: center;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
         font-size: 12px;
+        line-height: 1.5em;
       }
     }
 
     .id_card-sns {
-      // display: flex;
-      // justify-content: space-evenly;
-      margin-top: 20px;
       text-align: center;
 
       .fa {
-        margin: 0 10px 10px;
+        margin: 20px 10px 0;
         font-size: 18px;
 
       }

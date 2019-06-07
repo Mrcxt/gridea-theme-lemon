@@ -1,7 +1,7 @@
-<div class="post-container">
-    <div class="post-container-left">
+<div id="main-content" class="post-container">
+    <div id="content" class="post-container-left">
         <% posts.map(function(post) { %>
-            <article class="post i-card">
+            <article class="i-card">
                 <h2 class="post-title">
                     <a href="<%= post.link %>">
                         <%= post.title %>
@@ -11,31 +11,41 @@
                     <time class="post-time"><%= post.dateFormat %>&nbsp;</time>
                     <% post.tags.forEach(function(tag) { %>
                         <a href="<%= tag.link %>" class="post-tag">
-          #<%= tag.name %>&nbsp;
-        </a>
+                    #<%= tag.name %>&nbsp;
+                </a>
                         <% }); %>
                 </div>
-                    <div class="post-article">
-                <% if (themeConfig.showFeatureImage && post.feature) { %>
+                <div class="post-article">
+                    <% if (themeConfig.showFeatureImage && post.feature) { %>
                         <a href="<%= post.link %>" class="post-feature-image" style="background-image:url(<%= post.feature %>) ">
                         </a>
                         <% } %>
-                            <div class="post-abstract">
-                            <% if (post.abstract) {%>
-                                <div class="post-abstract-comtent">
-                                    <%- post.abstract %>
-                                </div>
-                            <%} %>
-                                <a class="btn btn-text" href="<%= post.link %>">Read More ~</a>
+                            <div class="post-comtent">
+                                <% if (post.abstract) {%>
+                                    <div class="post-comtent-abstract">
+                                        <%- post.abstract %>
+                                    </div>
+                                    <%}else{ %>
+                                        <div class="post-content-comtent">
+                                            <%- post.content %>
+                                        </div>
+                                        <%} %>
+                                            <a class="btn btn-text" href="<%= post.link %>">Read More ~</a>
                             </div>
-                    </div>
+                </div>
             </article>
             <% }); %>
     </div>
-    <div class="post-container-right">
+    <!--  -->
+    <div class="post-container-middle"></div>
+    <!--  -->
+    <div id="sidebar" class="post-container-right">
+
+        <!-- 个人信息 -->
         <div class="id_card post i-card">
             <!-- <img class="id_card-avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt=""> -->
-            <div class="id_card-avatar" style="background-image: url(<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>)"></div>
+            <div class="id_card-avatar" style="background-image: url(<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>)">
+            </div>
             <h1 class="id_card-title">
                 <%= themeConfig.siteName %>
             </h1>
@@ -44,35 +54,63 @@
             </h2>
             <!--  -->
             <div class="id_card-sns">
-                <a href="https://www.baidu.com"><i class="fa fa-github"></i></a>
-                <a href="https://www.baidu.com"><i class="fa fa-github"></i></a>
                 <!-- github -->
                 <% if(site.customConfig.github){ %>
-                    <a href="<%= site.customConfig.github %>"><i class="fa fa-github"></i></a>
+                    <a href="<%= site.customConfig.github %>" target="_blank" rel="noopener noreferrer"><i
+                        class="fa fa-github"></i></a>
                     <%}%>
                         <!-- twitter -->
                         <% if(site.customConfig.twitter){ %>
-                            <a href="<%= site.customConfig.twitter %>"><i class="fa fa-twitter"></i></a>
+                            <a href="<%= site.customConfig.twitter %>" target="_blank" rel="noopener noreferrer"><i
+                        class="fa fa-twitter"></i></a>
                             <%}%>
                                 <!-- weibo -->
                                 <% if(site.customConfig.weibo){ %>
-                                    <a href="<%= site.customConfig.weibo %>"><i class="fa fa-weibo"></i></a>
+                                    <a href="<%= site.customConfig.weibo %>" target="_blank" rel="noopener noreferrer"><i
+                        class="fa fa-weibo"></i></a>
                                     <%}%>
-                                        <!-- zhihu -->
-                                        <% if(site.customConfig.zhihu){ %>
-                                            <a href="<%= site.customConfig.zhihu %>"><i class="fa fa-zhihu"></i></a>
+                                        <!-- facebook -->
+                                        <% if(site.customConfig.facebook){ %>
+                                            <a href="<%= site.customConfig.facebook %>" target="_blank" rel="noopener noreferrer"><i
+                        class="fa fa-facebook"></i></a>
                                             <%}%>
-                                                <!-- facebook -->
-                                                <% if(site.customConfig.facebook){ %>
-                                                    <a href="<%= site.customConfig.facebook %>"><i class="fa fa-facebook"></i></a>
-                                                    <%}%>
 
             </div>
         </div>
-        <div class="post i-card">
-            <h3>公告</h3>
-            <p>watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等
-            </p>
-        </div>
+        <!-- 公告栏 -->
+        <% if(site.customConfig.notice){ %>
+            <div class="i-card notice">
+                <h3 class="notice-title">公告</h3>
+                <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
+            </div>
+            <% } %>
+                <!-- 公告栏 -->
+                <% if(site.customConfig.notice){ %>
+                    <div class="i-card notice">
+                        <h3 class="notice-title">公告</h3>
+                        <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
+                    </div>
+                    <% } %>
+                        <!-- 公告栏 -->
+                        <% if(site.customConfig.notice){ %>
+                            <div class="i-card notice">
+                                <h3 class="notice-title">公告</h3>
+                                <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
+                            </div>
+                            <% } %>
+                                <!-- 公告栏 -->
+                                <% if(site.customConfig.notice){ %>
+                                    <div class="i-card notice">
+                                        <h3 class="notice-title">公告</h3>
+                                        <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
+                                    </div>
+                                    <% } %>
     </div>
 </div>
+
+<script>
+    $('#sidebar').stickySidebar({
+        topSpacing: 80,
+        // bottomSpacing: 60
+    });
+</script>
