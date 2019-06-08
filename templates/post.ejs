@@ -8,19 +8,19 @@
     <div class="main">
         <%- include('./includes/header') %>
 
-            <div class="post-detail">
-                <article class="post">
+            <div class="post-detail main-container">
+                <article class="post i-card">
                     <h2 class="post-title">
                         <%= post.title %>
                     </h2>
                     <div class="post-info">
                         <time class="post-time">
-            · <%= post.dateFormat %> ·
-          </time>
+                        · <%= post.dateFormat %> ·
+                    </time>
                         <% post.tags.forEach(function(tag) { %>
                             <a href="<%= tag.link %>" class="post-tag">
-            # <%= tag.name %>
-          </a>
+                        # <%= tag.name %>
+                    </a>
                             <% }); %>
                     </div>
                     <% if (themeConfig.showFeatureImage && post.feature) { %>
@@ -31,30 +31,33 @@
                                 <%- post.content %>
                             </div>
                 </article>
+
+
+                <% if (post.nextPost && !post.hideInList) { %>
+                    <div class="next-post">
+                        <div class="next">下一篇</div>
+                        <a href="<%= post.nextPost.link %>">
+                            <h3 class="post-title">
+                                <%= post.nextPost.title %>
+                            </h3>
+                        </a>
+                    </div>
+                    <% } %>
+
+                        <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+                            <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                                <%- include('./includes/gitalk') %>
+                                    <% } %>
+
+                                        <% if (commentSetting.commentPlatform === 'disqus') { %>
+                                            <%- include('./includes/disqus') %>
+                                                <% } %>
+                                                    <% } %>
             </div>
 
-            <% if (post.nextPost && !post.hideInList) { %>
-                <div class="next-post">
-                    <div class="next">下一篇</div>
-                    <a href="<%= post.nextPost.link %>">
-                        <h3 class="post-title">
-                            <%= post.nextPost.title %>
-                        </h3>
-                    </a>
-                </div>
-                <% } %>
 
-                    <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
-                        <% if (commentSetting.commentPlatform === 'gitalk') { %>
-                            <%- include('./includes/gitalk') %>
-                                <% } %>
+            <%- include('./includes/footer') %>
 
-                                    <% if (commentSetting.commentPlatform === 'disqus') { %>
-                                        <%- include('./includes/disqus') %>
-                                            <% } %>
-                                                <% } %>
-
-                                                    <%- include('./includes/footer') %>
     </div>
 </body>
 

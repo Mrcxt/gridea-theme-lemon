@@ -1,0 +1,47 @@
+.id_card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .id_card-avatar {
+        display: block;
+        padding: 15px;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        background-position: center center;
+        background-origin: content-box;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: @box-shadow;
+    }
+
+    .id_card-title {
+        margin-top: 10px;
+        font-weight: 100;
+        font-size: 24px;
+    }
+
+    .id_card-description {
+        margin-top: 10px;
+        // overflow: hidden;
+        width: 100%;
+        color: #979797;
+        text-align: center;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        font-size: 12px;
+        line-height: 1.5em;
+    }
+
+    .id_card-sns {
+        text-align: center;
+
+        .fa {
+            margin: 20px 10px 0;
+            font-size: 18px;
+
+        }
+    }
+}

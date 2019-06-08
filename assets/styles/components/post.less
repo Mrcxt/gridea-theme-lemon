@@ -1,29 +1,31 @@
 .post-detail {
   flex: 1;
+
   .post {
     padding: 24px 32px;
+
     .post-feature-image {
-      padding-top: 56.25%;
-      background-size: cover;
-      background-position: center;
       margin-bottom: 24px;
+      padding-top: 56.25%;
       border-radius: 2px;
+      background-position: center;
+      background-size: cover;
     }
 
     .post-title {
-      font-size: 32px;
-      text-align: center;
       padding: 24px;
+      text-align: center;
       font-weight: 600;
+      font-size: 32px;
     }
 
     .post-info {
+      padding-bottom: 24px;
       text-align: center;
       font-size: 12px;
-      padding-bottom: 24px;
 
       .post-time {
-        color: @dark-gray;
+        // color: @dark-gray;
       }
 
       .post-tag {
@@ -33,102 +35,122 @@
 
     .post-content {
       a {
-        color: @main-color;
+        // color: @main-color;
         transition: all 0.3s;
+
         &:hover {
-          color: @dark-main-color;
-          border-bottom: 1px dotted @dark-main-color;
+          // color: @dark-main-color;
+          // border-bottom: 1px dotted @dark-main-color;
         }
       }
+
       img {
         display: block;
-        box-shadow: 0 0 30px #eee;
+        margin: 24px auto;
         max-width: 100%;
         border-radius: 2px;
-        margin: 24px auto;
+        box-shadow: 0 0 30px #eee;
       }
 
       p {
-        line-height: 1.725;
         margin-bottom: 24px;
-        font-size: 16px;
         letter-spacing: .05em;
+        font-size: 16px;
+        line-height: 1.725;
       }
 
-      p, li {
+      p,
+      li {
         code {
-          font-family: monospace;
-          font-size: inherit;
-          background-color: rgba(0,0,0,.06);
           padding: 0 2px;
-          border: 1px solid rgba(0,0,0,.08);
+          border: 1px solid rgba(0, 0, 0, .08);
           border-radius: 2px 2px;
-          line-height: initial;
-          word-wrap: break-word;
+          background-color: rgba(0, 0, 0, .06);
           text-indent: 0;
+          word-wrap: break-word;
+          font-size: inherit;
+          font-family: monospace;
+          line-height: initial;
         }
       }
 
       pre {
         margin-bottom: 24px;
+
         code {
-          font-size: 16px;
-          font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace;
           padding: 1em;
           border-radius: 5px;
+          font-size: 16px;
+          font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace;
           line-height: 1.375;
         }
       }
 
       blockquote {
-        background: #f3f5f7;
+        margin-bottom: 16px;
         padding: 16px;
         border-left: 2px solid #006cff;
-        margin-bottom: 16px;
+        background: #f3f5f7;
+
         p {
           margin-bottom: 0;
         }
       }
 
       table {
-        border-collapse: collapse;
-        margin: 1rem 0;
         display: block;
         overflow-x: auto;
+        margin: 1rem 0;
+        border-collapse: collapse;
       }
+
       tr {
         border-top: 1px solid #dfe2e5;
       }
-      td, th {
-        border: 1px solid #dfe2e5;
+
+      td,
+      th {
         padding: .6em 1em;
+        border: 1px solid #dfe2e5;
       }
 
-      ul, ol {
+      ul,
+      ol {
+        margin-bottom: 16px;
         padding-left: 24px;
         line-height: 1.725;
-        margin-bottom: 16px;
       }
 
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         margin: 16px 0;
         font-weight: bold;
       }
+
       h1 {
         font-size: 28px;
       }
+
       h2 {
         font-size: 24px;
       }
+
       h3 {
         font-size: 20px;
       }
+
       h4 {
         font-size: 18px;
       }
+
       h5 {
         font-size: 16px;
       }
+
       h6 {
         font-size: 14px;
       }
@@ -138,30 +160,21 @@
 
 
 .next-post {
-  text-align: center;
   padding: 24px 32px;
+  text-align: center;
+
   .next {
     margin-bottom: 24px;
-    color: @oc-gray-8;
+    // color: @oc-gray-8;
   }
+
   .post-title {
-    font-size: 20px;
     font-weight: bold;
+    font-size: 20px;
   }
 }
 
-#gitalk-container, #disqus_thread {
+#gitalk-container,
+#disqus_thread {
   padding: 24px 32px;
-}
-
-@media (max-width: 600px) {
-  .post-detail {
-    .post {
-      padding: 16px;
-      .post-title {
-        font-size: 24px;
-        padding: 16px 0;
-      }
-    }
-  }
 }

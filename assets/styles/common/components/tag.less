@@ -1,0 +1,64 @@
+@import '../common/base.less';
+
+.i-tag {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background-color: fade(@primary-color, 10%);
+    color: @primary-color;
+    white-space: nowrap;
+    font-size: 12px;
+
+    // 
+    &+& {
+        margin-left: 5px;
+    }
+
+    // 
+    .base_tag_theme(@color) {
+        background-color: fade(@color, 10%);
+        color: shade(@color, 10%);
+    }
+
+    &.i-tag-primary {
+        .base_tag_theme(@primary-color)
+    }
+
+    &.i-tag-success {
+
+        .base_tag_theme(@success-color)
+    }
+
+    &.i-tag-info {
+        .base_tag_theme(@info-color)
+    }
+
+    &.i-tag-warning {
+        .base_tag_theme(@warning-color)
+    }
+
+    &.i-tag-error {
+        .base_tag_theme(@error-color)
+    }
+
+    &.i-tag-banana {
+        .base_tag_theme(@banana-color)
+    }
+
+    &.i-tag-other_1 {
+        .base_tag_theme(@other_1-color)
+    }
+
+    &.i-tag-other_2 {
+        .base_tag_theme(@other_2-color)
+    }
+
+    &.i-tag-other_3 {
+        .base_tag_theme(@other_3-color)
+    }
+
+    &.i-tag-other_4 {
+        .base_tag_theme(@other_4-color)
+    }
+}

@@ -1,17 +1,18 @@
-<div id="main-content" class="post-container">
+<div id="main-content" class="post-container main-container">
     <div id="content" class="post-container-left">
         <% posts.map(function(post) { %>
-            <article class="i-card">
+            <article class="post i-card">
                 <h2 class="post-title">
                     <a href="<%= post.link %>">
                         <%= post.title %>
                     </a>
                 </h2>
                 <div class="post-info">
-                    <time class="post-time"><%= post.dateFormat %>&nbsp;</time>
+                    <time class="post-time"><%= post.dateFormat %></time>
                     <% post.tags.forEach(function(tag) { %>
-                        <a href="<%= tag.link %>" class="post-tag">
-                    #<%= tag.name %>&nbsp;
+                        <a href="<%= tag.link %>" class="post-tag i-tag
+                            i-tag-<%= ['', 'primary', 'success', 'warning', 'info','error','banana','other_1','other_2','other_3','other_4',][Math.floor(Math.random()*11)] %>">
+                    #<%= tag.name %>
                 </a>
                         <% }); %>
                 </div>
@@ -20,14 +21,14 @@
                         <a href="<%= post.link %>" class="post-feature-image" style="background-image:url(<%= post.feature %>) ">
                         </a>
                         <% } %>
-                            <div class="post-comtent">
+                            <div class="post-content">
                                 <% if (post.abstract) {%>
-                                    <div class="post-comtent-abstract">
+                                    <div class="post-content-abstract">
                                         <%- post.abstract %>
                                     </div>
                                     <%}else{ %>
-                                        <div class="post-content-comtent">
-                                            <%- post.content %>
+                                        <div class="post-content-content">
+                                            <%= post.content.replace(/<[^>]+>/g,"") %>
                                         </div>
                                         <%} %>
                                             <a class="btn btn-text" href="<%= post.link %>">Read More ~</a>
@@ -35,6 +36,9 @@
                 </div>
             </article>
             <% }); %>
+                <!-- 翻页 -->
+                <%- include('./pagination') %>
+
     </div>
     <!--  -->
     <div class="post-container-middle"></div>
@@ -42,69 +46,11 @@
     <div id="sidebar" class="post-container-right">
 
         <!-- 个人信息 -->
-        <div class="id_card post i-card">
-            <!-- <img class="id_card-avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt=""> -->
-            <div class="id_card-avatar" style="background-image: url(<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>)">
-            </div>
-            <h1 class="id_card-title">
-                <%= themeConfig.siteName %>
-            </h1>
-            <h2 class="id_card-description">
-                <%= themeConfig.siteDescription %>
-            </h2>
-            <!--  -->
-            <div class="id_card-sns">
-                <!-- github -->
-                <% if(site.customConfig.github){ %>
-                    <a href="<%= site.customConfig.github %>" target="_blank" rel="noopener noreferrer"><i
-                        class="fa fa-github"></i></a>
-                    <%}%>
-                        <!-- twitter -->
-                        <% if(site.customConfig.twitter){ %>
-                            <a href="<%= site.customConfig.twitter %>" target="_blank" rel="noopener noreferrer"><i
-                        class="fa fa-twitter"></i></a>
-                            <%}%>
-                                <!-- weibo -->
-                                <% if(site.customConfig.weibo){ %>
-                                    <a href="<%= site.customConfig.weibo %>" target="_blank" rel="noopener noreferrer"><i
-                        class="fa fa-weibo"></i></a>
-                                    <%}%>
-                                        <!-- facebook -->
-                                        <% if(site.customConfig.facebook){ %>
-                                            <a href="<%= site.customConfig.facebook %>" target="_blank" rel="noopener noreferrer"><i
-                        class="fa fa-facebook"></i></a>
-                                            <%}%>
+        <%- include('./cards/id-card.ejs') %>
 
-            </div>
-        </div>
-        <!-- 公告栏 -->
-        <% if(site.customConfig.notice){ %>
-            <div class="i-card notice">
-                <h3 class="notice-title">公告</h3>
-                <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
-            </div>
-            <% } %>
-                <!-- 公告栏 -->
-                <% if(site.customConfig.notice){ %>
-                    <div class="i-card notice">
-                        <h3 class="notice-title">公告</h3>
-                        <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
-                    </div>
-                    <% } %>
-                        <!-- 公告栏 -->
-                        <% if(site.customConfig.notice){ %>
-                            <div class="i-card notice">
-                                <h3 class="notice-title">公告</h3>
-                                <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
-                            </div>
-                            <% } %>
-                                <!-- 公告栏 -->
-                                <% if(site.customConfig.notice){ %>
-                                    <div class="i-card notice">
-                                        <h3 class="notice-title">公告</h3>
-                                        <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
-                                    </div>
-                                    <% } %>
+            <!-- 公告栏 -->
+            <%- include('./cards/notice-card.ejs') %>
+
     </div>
 </div>
 
