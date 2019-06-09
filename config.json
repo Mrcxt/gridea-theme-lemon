@@ -2,6 +2,7 @@
     "name": "Lemon",
     "version": "1.0.0",
     "author": "虾哔哔",
+    "repository": "https://github.com/getgridea/gridea-theme-fly",
     "customConfig": [{
             "name": "contentMaxWidth",
             "label": "内容区最大宽度",

@@ -7,15 +7,8 @@
 <body>
     <div class="main">
         <%- include('./includes/header') %>
-            <div class="current-tag-container main-container">
-                <h2 class="title">
-                    标签：#
-                    <%= tag.name %>
-                </h2>
-                <%- include('./includes/post-list') %>
-                    <!-- <%- include('./includes/pagination') %> -->
-            </div>
-            <%- include('./includes/footer') %>
+            <%- include('./includes/post-list',{currentTag:`${tag.name}`}) %>
+                <%- include('./includes/footer') %>
     </div>
 </body>
 
