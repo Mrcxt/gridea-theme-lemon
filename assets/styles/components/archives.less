@@ -1,1 +1,64 @@
-.archives-container {}
+@import '../common/common/base.less';
+
+.archives-container {
+    display: flex;
+
+    .timeline {
+        padding: 30px;
+        color: @title-color;
+
+        .timeline-year-group {
+            display: flex;
+
+
+            .timeline-yearformat {
+                margin: 0;
+                color: @primary-color;
+                font-size: 24px;
+            }
+
+            .timeline-border {
+                position: relative;
+                margin: 0 40px;
+                width: 2px;
+                background-color: #C5C5C5;
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    z-index: 2;
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #FFFFFF;
+                    border-radius: 50%;
+                    background: #C5C5C5;
+                    content: '';
+                    transform: translateX(-50%);
+                }
+            }
+
+            ul {
+                margin-bottom: 30px;
+
+                li {
+                    &+li {
+                        margin-top: 15px;
+                    }
+
+                    a {
+                        .timeline-title {
+                            font-weight: 400;
+                            font-size: 16px;
+                        }
+
+                        .timeline-dateformat {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
