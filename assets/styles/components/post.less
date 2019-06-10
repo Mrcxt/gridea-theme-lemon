@@ -2,15 +2,8 @@
   flex: 1;
 
   .post {
-    padding: 24px 32px;
-
-    .post-feature-image {
-      margin-bottom: 24px;
-      padding-top: 56.25%;
-      border-radius: 2px;
-      background-position: center;
-      background-size: cover;
-    }
+    display: flex;
+    flex-direction: column;
 
     .post-title {
       padding: 24px;
@@ -29,11 +22,22 @@
       }
 
       .post-tag {
-        padding: 8px 8px;
+        margin: 5px;
       }
     }
 
+    .post-feature-image {
+      margin-bottom: 24px;
+      padding-top: 56.25%;
+      border-radius: 2px;
+      background-position: center;
+      background-size: cover;
+    }
+
+
     .post-content {
+      overflow: hidden;
+
       a {
         // color: @main-color;
         transition: all 0.3s;

@@ -13,10 +13,49 @@ body {
     width: 100%;
 
     .main-container {
+        display: flex;
         flex: 1;
         margin: 0 auto;
         width: 960px;
+
+        .main-container-left {
+            flex: 1;
+
+        }
+
+        .main-container-middle {
+            width: 20px;
+
+        }
+
+        .main-container-right {
+            width: 280px;
+
+        }
     }
+}
+
+@media (max-width:960px) {
+    .main {
+        .main-container {
+            flex-direction: column;
+            width: 100%;
+
+            .main-container-left {
+                padding: 0 20px;
+            }
+
+            .main-container-middle {
+                display: none;
+
+            }
+
+            .main-container-right {
+                display: none
+            }
+        }
+    }
+
 }
 
 

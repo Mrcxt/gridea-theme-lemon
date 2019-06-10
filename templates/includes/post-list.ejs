@@ -1,68 +1,44 @@
-<div id="main-content" class="post-container main-container">
-    <div id="content" class="post-container-left">
-        <% if(typeof currentTag !== 'undefined') {%>
-            <div class="i-card">
-                <b>标签：#
-                <%= currentTag %></b>
-            </div>
-            <%}%>
-                <% posts.map(function(post) { %>
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            <a href="<%= post.link %>">
-                                <%= post.title %>
-                            </a>
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time"><%= post.dateFormat %></time>
-                            <% post.tags.forEach(function(tag) { %>
-                                <a href="<%= tag.link %>" class="post-tag i-tag
+<% if(typeof currentTag !== 'undefined') {%>
+    <div class="i-card">
+        <b>标签：#
+        <%= currentTag %></b>
+    </div>
+    <%}%>
+        <% posts.map(function(post) { %>
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="<%= post.link %>">
+                        <%= post.title %>
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time"><%= post.dateFormat %></time>
+                    <% post.tags.forEach(function(tag) { %>
+                        <a href="<%= tag.link %>" class="post-tag i-tag
                             i-tag-<%= ['', 'primary', 'success', 'warning', 'info','error','banana','other_1','other_2','other_3','other_4',][Math.floor(Math.random()*11)] %>">
-                    #<%= tag.name %>
-                </a>
-                                <% }); %>
-                        </div>
-                        <div class="post-article">
-                            <% if (themeConfig.showFeatureImage && post.feature) { %>
-                                <a href="<%= post.link %>" class="post-feature-image" style="background-image:url(<%= post.feature %>) ">
-                                </a>
-                                <% } %>
-                                    <div class="post-content">
-                                        <% if (post.abstract) {%>
-                                            <div class="post-content-abstract">
-                                                <%- post.abstract %>
-                                            </div>
-                                            <%}else{ %>
-                                                <div class="post-content-content">
-                                                    <%= post.content.replace(/<[^>]+>/g,"") %>
-                                                </div>
-                                                <%} %>
-                                                    <a class="btn btn-text" href="<%= post.link %>">Read More ~</a>
+            #<%= tag.name %>
+        </a>
+                        <% }); %>
+                </div>
+                <div class="post-article">
+                    <% if (themeConfig.showFeatureImage && post.feature) { %>
+                        <a href="<%= post.link %>" class="post-feature-image" style="background-image:url(<%= post.feature %>) ">
+                        </a>
+                        <% } %>
+                            <div class="post-content">
+                                <% if (post.abstract) {%>
+                                    <div class="post-content-abstract">
+                                        <%- post.abstract %>
                                     </div>
-                        </div>
-                    </article>
-                    <% }); %>
-                        <!-- 翻页 -->
-                        <%- include('./pagination') %>
-
-    </div>
-    <!--  -->
-    <div class="post-container-middle"></div>
-    <!--  -->
-    <div id="sidebar" class="post-container-right">
-
-        <!-- 个人信息 -->
-        <%- include('./cards/id-card.ejs') %>
-
-            <!-- 公告栏 -->
-            <%- include('./cards/notice-card.ejs') %>
-
-    </div>
-</div>
-
-<script>
-    $('#sidebar').stickySidebar({
-        topSpacing: 80,
-        // bottomSpacing: 60
-    });
-</script>
+                                    <%}else{ %>
+                                        <div class="post-content-content">
+                                            <%= post.content.replace(/<[^>]+>/g,"") %>
+                                        </div>
+                                        <%} %>
+                                            <a class="btn btn-text" href="<%= post.link %>">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            <% }); %>
+                <!-- 翻页 -->
+                <%- include('./pagination') %>

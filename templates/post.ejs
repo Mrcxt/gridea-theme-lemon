@@ -8,57 +8,76 @@
     <div class="main">
         <%- include('./includes/header') %>
 
-            <div class="post-detail main-container">
-                <article class="post i-card">
-                    <h2 class="post-title">
-                        <%= post.title %>
-                    </h2>
-                    <div class="post-info">
-                        <time class="post-time">
-                        · <%= post.dateFormat %> ·
-                    </time>
-                        <% post.tags.forEach(function(tag) { %>
-                            <a href="<%= tag.link %>" class="post-tag">
-                        # <%= tag.name %>
-                    </a>
-                            <% }); %>
-                    </div>
-                    <% if (themeConfig.showFeatureImage && post.feature) { %>
-                        <div class="post-feature-image" style="background-image: url('<%= post.feature %>')">
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            <%= post.title %>
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time"><%= post.dateFormat %></time>
+                            <% post.tags.forEach(function(tag) { %>
+                                <a href="<%= tag.link %>" class="post-tag i-tag
+                            i-tag-<%= ['', 'primary', 'success', 'warning', 'info','error','banana','other_1','other_2','other_3','other_4',][Math.floor(Math.random()*11)] %>">
+                            #<%= tag.name %>
+                        </a>
+                                <% }); %>
+                        </div>
+                        <% if (themeConfig.showFeatureImage && post.feature) { %>
+                            <div class="post-feature-image" style="background-image: url('<%= post.feature %>')"></div>
+                            <% } %>
+                                <div class="post-content">
+                                    <!-- <%- post.content %> -->
+                                </div>
+                    </article>
+                    <!--  -->
+                    <% if (post.nextPost && !post.hideInList) { %>
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="<%= post.nextPost.link %>">
+                                <h3 class="post-title">
+                                    <%= post.nextPost.title %>
+                                </h3>
+                            </a>
                         </div>
                         <% } %>
-                            <div class="post-content">
-                                <%- post.content %>
-                            </div>
-                </article>
 
+                            <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+                                <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                                    <%- include('./includes/gitalk') %>
+                                        <% } %>
 
-                <% if (post.nextPost && !post.hideInList) { %>
-                    <div class="next-post">
-                        <div class="next">下一篇</div>
-                        <a href="<%= post.nextPost.link %>">
-                            <h3 class="post-title">
-                                <%= post.nextPost.title %>
-                            </h3>
-                        </a>
-                    </div>
-                    <% } %>
-
-                        <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
-                            <% if (commentSetting.commentPlatform === 'gitalk') { %>
-                                <%- include('./includes/gitalk') %>
-                                    <% } %>
-
-                                        <% if (commentSetting.commentPlatform === 'disqus') { %>
-                                            <%- include('./includes/disqus') %>
-                                                <% } %>
+                                            <% if (commentSetting.commentPlatform === 'disqus') { %>
+                                                <%- include('./includes/disqus') %>
                                                     <% } %>
+                                                        <% } %>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    <!-- 个人信息 -->
+                    <%- include('./includes/cards/id-card.ejs') %>
+                        <!-- 公告栏 -->
+                        <%- include('./includes/cards/notice-card.ejs') %>
+                </div>
+
+
+
+
             </div>
 
 
             <%- include('./includes/footer') %>
 
     </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
 </body>
 
 </html>

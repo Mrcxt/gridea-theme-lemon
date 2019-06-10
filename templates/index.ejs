@@ -8,10 +8,34 @@
     <div class="main">
         <%- include('./includes/header') %>
 
-            <%- include('./includes/post-list') %>
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    <%- include('./includes/post-list') %>
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
-                <%- include('./includes/footer') %>
+                    <!-- 个人信息 -->
+                    <%- include('./includes/cards/id-card.ejs') %>
+
+                        <!-- 公告栏 -->
+                        <%- include('./includes/cards/notice-card.ejs') %>
+
+                </div>
+            </div>
+
+
+
+            <%- include('./includes/footer') %>
     </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
 </body>
 
 </html>

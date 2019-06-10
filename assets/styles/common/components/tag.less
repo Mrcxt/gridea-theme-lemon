@@ -16,9 +16,18 @@
     }
 
     // 
+    &.lg {
+        padding: 5px 15px;
+    }
+
+    // 
     .base_tag_theme(@color) {
         background-color: fade(@color, 10%);
         color: shade(@color, 10%);
+
+        &:hover {
+            background-color: fade(@color, 20%);
+        }
     }
 
     &.i-tag-primary {

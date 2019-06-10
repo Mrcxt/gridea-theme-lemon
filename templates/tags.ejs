@@ -12,7 +12,8 @@
                 <div class="tags-group">
                     <% tags.forEach((tag) => { %>
                         <a class="tags-tag i-tag
-                            i-tag-<%= ['', 'primary', 'success', 'warning', 'info','error','banana','other_1','other_2','other_3','other_4',][Math.floor(Math.random()*11)] %>" href="<%= tag.link %>">
+                            i-tag-<%= ['', 'primary', 'success', 'warning', 'info','error','banana','other_1','other_2','other_3','other_4',][Math.floor(Math.random()*11)] %>
+                             <%=['', 'sm', 'lg', 'xl'][Math.floor(Math.random()*4)] %>" href="<%= tag.link %>">
                             <%= tag.name %>
                         </a>
                         <% }); %>
