@@ -26,18 +26,24 @@
         padding: 5px;
         height: 50px;
       }
-    }
 
-    .site-title {
-      h1 {
-        margin-right: 25px;
-        color: @title-color;
-        font-weight: 100;
-        font-size: 24px;
+      .site-title {
+        h1 {
+          margin-right: 25px;
+          color: @title-color;
+          font-weight: 100;
+          font-size: 24px;
+        }
       }
     }
 
+    .menu-btn {
+      display: none;
+    }
+
     .menu-container {
+      display: block;
+
       ul {
         display: flex;
 
@@ -52,6 +58,54 @@
 
             &:hover {
               color: fade(@title-color, 70%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:960px) {
+  .header {
+    .nav {
+      position: relative;
+      padding: 0 20px;
+      width: 100%;
+
+      .logo {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+        cursor: pointer;
+      }
+
+      .menu-container {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: none;
+        width: 100%;
+        border-top: 1px solid #aaa;
+
+        ul {
+          flex-direction: column;
+
+          li {
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            text-align: center;
+
+            &+li {
+              margin-left: 0;
+            }
+
+            a {
+              display: block;
+              padding: 10px 0;
+
             }
           }
         }

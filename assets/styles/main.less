@@ -20,15 +20,18 @@ body {
 
         .main-container-left {
             flex: 1;
+            max-width: 660px;
 
         }
 
         .main-container-middle {
+            flex-shrink: 0;
             width: 20px;
 
         }
 
         .main-container-right {
+            flex-shrink: 0;
             width: 280px;
 
         }
@@ -39,10 +42,12 @@ body {
     .main {
         .main-container {
             flex-direction: column;
+            justify-content: flex-start;
+            padding: 0 20px;
             width: 100%;
 
             .main-container-left {
-                padding: 0 20px;
+                max-width: 100%;
             }
 
             .main-container-middle {
@@ -72,3 +77,4 @@ body {
 // cards
 @import './components/cards/id-card.less';
 @import './components/cards/notice-card.less';
+@import './components/cards/toc-card.less';

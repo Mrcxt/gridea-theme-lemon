@@ -1,27 +1,26 @@
 <% let years = []; posts.forEach((item) => { const year = item.date.substring(0, 4); if (!years.includes(year)) { years.push(year); } }); %>
 
     <div class="archives-container main-container">
-        <div class="timeline">
+        <ul class="timeline">
             <% years.forEach(function(year) { %>
-                <section class="timeline-year-group">
-                    <h3 class="timeline-yearformat">
+                <li>
+                    <h3 class="year">
                         <%- year %>
                     </h3>
-                    <div class="timeline-border"></div>
-                    <ul>
+                    <ul class="year-wrapper">
                         <% posts.forEach(function(post) { %>
                             <%if (post.date.indexOf(year) !== -1) { %>
                                 <li>
-                                    <a href="<%= post.link %>">
-                                        <span class="timeline-title"><%= post.title %></span>
-                                        <span class="timeline-dateformat"><%= post.dateFormat %></span>
+                                    <span class="date"><%= post.dateFormat %></span>
+                                    <a class="title" href="<%= post.link %>">
+                                        <span><%= post.title %></span>
                                     </a>
                                 </li>
                                 <% } %>
                                     <% }); %>
                     </ul>
 
-                </section>
+                </li>
                 <% }); %>
-        </div>
+        </ul>
     </div>

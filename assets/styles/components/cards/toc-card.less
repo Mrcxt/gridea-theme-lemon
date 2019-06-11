@@ -1,0 +1,67 @@
+.toc-card {
+    .toc-title {}
+
+    .toc-content {
+        .markdownIt-TOC {
+            margin-left: 0;
+            list-style: none;
+        }
+
+        a.on {
+            color: #2e9fff;
+        }
+
+        ul,
+        ol {
+            margin: initial;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 25px;
+            padding: initial;
+            padding: 0;
+            list-style: disc;
+
+            li {
+                margin: 5px 0;
+            }
+
+            ul,
+            ol {
+                list-style: circle;
+
+                ul,
+                ol {
+                    list-style: disc;
+
+                    ul,
+                    ol {
+                        list-style: circle;
+
+                        ul,
+                        ol {
+                            list-style: disc;
+
+                            ul,
+                            ol {
+                                list-style: circle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        li>ol,
+        li>ul {
+            margin-left: 18px;
+        }
+
+        ul ul,
+        ol ul,
+        ul ol,
+        ol ol {
+            margin-bottom: 0;
+        }
+    }
+}

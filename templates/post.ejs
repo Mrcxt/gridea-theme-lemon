@@ -2,6 +2,17 @@
 
 <head>
     <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+        <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+            <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                <% } %>
+
+                    <% if (commentSetting.commentPlatform === 'disqus') { %>
+                        <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+                        <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+                        <% } %>
+                            <% } %>
 </head>
 
 <body>
@@ -28,7 +39,7 @@
                             <div class="post-feature-image" style="background-image: url('<%= post.feature %>')"></div>
                             <% } %>
                                 <div class="post-content">
-                                    <!-- <%- post.content %> -->
+                                    <%- post.content %>
                                 </div>
                     </article>
                     <!--  -->
@@ -42,25 +53,21 @@
                             </a>
                         </div>
                         <% } %>
-
-                            <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
-                                <% if (commentSetting.commentPlatform === 'gitalk') { %>
-                                    <%- include('./includes/gitalk') %>
-                                        <% } %>
-
-                                            <% if (commentSetting.commentPlatform === 'disqus') { %>
-                                                <%- include('./includes/disqus') %>
-                                                    <% } %>
-                                                        <% } %>
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
                 </div>
                 <!-- middle -->
                 <div class="main-container-middle"></div>
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
-                    <!-- 个人信息 -->
-                    <%- include('./includes/cards/id-card.ejs') %>
-                        <!-- 公告栏 -->
-                        <%- include('./includes/cards/notice-card.ejs') %>
+                    <% if( post.toc){ %>
+                        <!-- toc -->
+                        <%- include('./includes/cards/toc-card.ejs') %>
+                            <%}else{%>
+                                <!-- id-card -->
+                                <%- include('./includes/cards/id-card.ejs') %>
+                                    <%}%>
+
                 </div>
 
 
@@ -78,6 +85,15 @@
             // bottomSpacing: 60
         });
     </script>
+    <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+        <% if (commentSetting.commentPlatform === 'gitalk') { %>
+            <%- include('./includes/gitalk') %>
+                <% } %>
+
+                    <% if (commentSetting.commentPlatform === 'disqus') { %>
+                        <%- include('./includes/disqus') %>
+                            <% } %>
+                                <% } %>
 </body>
 
 </html>

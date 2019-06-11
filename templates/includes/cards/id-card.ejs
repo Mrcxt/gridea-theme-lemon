@@ -1,35 +1,36 @@
-<div class="id_card i-card">
-    <!-- <img class="id_card-avatar" src="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" alt=""> -->
-    <div class="id_card-avatar" style="background-image: url(<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>)">
-    </div>
-    <h1 class="id_card-title">
-        <%= themeConfig.siteName %>
-    </h1>
-    <h2 class="id_card-description">
-        <%= themeConfig.siteDescription %>
-    </h2>
-    <!--  -->
-    <div class="id_card-sns">
-        <!-- github -->
-        <% if(site.customConfig.github){ %>
-            <a href="<%= site.customConfig.github %>" target="_blank" rel="noopener noreferrer"><i
+<%# if(typeof site.customConfig.id_card === 'undefined'&& site.customConfig.id_card){ %>
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>)">
+        </div>
+        <h1 class="id_card-title">
+            <%= themeConfig.siteName %>
+        </h1>
+        <h2 class="id_card-description">
+            <%= themeConfig.siteDescription %>
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            <% if(site.customConfig.github){ %>
+                <a href="<%= site.customConfig.github %>" target="_blank" rel="noopener noreferrer"><i
                 class="fa fa-github"></i></a>
-            <%}%>
-                <!-- twitter -->
-                <% if(site.customConfig.twitter){ %>
-                    <a href="<%= site.customConfig.twitter %>" target="_blank" rel="noopener noreferrer"><i
+                <%}%>
+                    <!-- twitter -->
+                    <% if(site.customConfig.twitter){ %>
+                        <a href="<%= site.customConfig.twitter %>" target="_blank" rel="noopener noreferrer"><i
                 class="fa fa-twitter"></i></a>
-                    <%}%>
-                        <!-- weibo -->
-                        <% if(site.customConfig.weibo){ %>
-                            <a href="<%= site.customConfig.weibo %>" target="_blank" rel="noopener noreferrer"><i
+                        <%}%>
+                            <!-- weibo -->
+                            <% if(site.customConfig.weibo){ %>
+                                <a href="<%= site.customConfig.weibo %>" target="_blank" rel="noopener noreferrer"><i
                 class="fa fa-weibo"></i></a>
-                            <%}%>
-                                <!-- facebook -->
-                                <% if(site.customConfig.facebook){ %>
-                                    <a href="<%= site.customConfig.facebook %>" target="_blank" rel="noopener noreferrer"><i
+                                <%}%>
+                                    <!-- facebook -->
+                                    <% if(site.customConfig.facebook){ %>
+                                        <a href="<%= site.customConfig.facebook %>" target="_blank" rel="noopener noreferrer"><i
                 class="fa fa-facebook"></i></a>
-                                    <%}%>
+                                        <%}%>
 
+        </div>
     </div>
-</div>
+    <%# } %>

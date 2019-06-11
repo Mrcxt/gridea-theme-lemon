@@ -1,6 +1,8 @@
-<% if(site.customConfig.notice){ %>
+<% if(typeof site.customConfig.notice !== 'undefined'&&site.customConfig.notice){ %>
     <div class="notice-card i-card ">
-        <h3 class="notice-title">公告</h3>
-        <p class="notice-content">watchOS 6/macOS 10.15 已更新 iOS 13 仍请稍等</p>
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">
+            <%- site.customConfig.notice %>
+        </div>
     </div>
     <% } %>
