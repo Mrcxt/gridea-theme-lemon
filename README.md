@@ -15,7 +15,7 @@
 
 ## 安装
 
-推荐使用 `git clone` 的方式下载到 Gridea 客户端的 theme 目录。
+推荐使用 `git clone` 的方式下载到 Gridea 客户端的 theme 目录。方便后期更新升级。
 
 - 打开 theme 目录：`~/Documents/gridea/themes`
 - 在当前目录执行 `https://github.com/Mrcxt/gridea-theme-lemon.git`
