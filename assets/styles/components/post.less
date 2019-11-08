@@ -6,9 +6,10 @@
     flex-direction: column;
 
     .post-title {
+      font-family: 'Microsoft YaHei', 'Consolas';
       padding: 24px;
       text-align: center;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 32px;
     }
 
@@ -67,26 +68,39 @@
       li {
         code {
           padding: 0 2px;
-          border: 1px solid rgba(0, 0, 0, .08);
-          border-radius: 2px 2px;
-          background-color: rgba(0, 0, 0, .06);
+          border: 1px solid rgba(110, 209, 248, 0.11);
+          border-radius: 5px;
+          background-color: rgba(110, 209, 248, 0.11);
+          color: dimgray;
           text-indent: 0;
           word-wrap: break-word;
           font-size: inherit;
-          font-family: monospace;
+          font-family: consolas;
           line-height: initial;
         }
       }
 
       pre {
-        margin-bottom: 24px;
-
+        margin-bottom: 16px;
         code {
-          padding: 1em;
-          border-radius: 5px;
-          font-size: 16px;
+          font-size: 14px;
           font-family: 'Source Code Pro', Consolas, Menlo, Monaco, 'Courier New', monospace;
+          padding: 2em 1em 1em;
+          border-radius: 5px;
           line-height: 1.375;
+          position: relative;
+          background: #fafafa;
+          display: block;
+          &:after {
+            content: 'Code:';
+            display: block;
+            position: absolute;
+            left: 8px;
+            top: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ccc;
+          }
         }
       }
 
@@ -95,6 +109,7 @@
         padding: 16px;
         border-left: 2px solid #006cff;
         background: #f3f5f7;
+        color: darkgray;
 
         p {
           margin-bottom: 0;
